@@ -1,0 +1,23 @@
+= 接口文档
+:author: liush
+:email: 442549007@qq.com
+:revnumber: v1.0
+:toc: left
+:toc-title: 接口文档
+
+==  用户接口
+=== 新增用户
+*curl 示例*
+include::{snippets}\addUser\curl-request.adoc[]
+*请求头头*
+include::{snippets}\addUser\request-headers.adoc[]
+*入参*
+include::{snippets}\addUser\request-parameters.adoc[]
+*出参*
+include::{snippets}\addUser\response-fields.adoc[]
+
+=== 修改用户1111111111
+
+
+
+

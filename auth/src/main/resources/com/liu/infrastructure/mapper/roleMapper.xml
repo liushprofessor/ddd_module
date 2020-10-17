@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liu.infrastructure.mapper.RoleMapper">
+
+    <insert id="insertRole" parameterType="com.liu.infrastructure.pojo.CreateRoleDO">
+
+        insert into t_role(id,name) values(#{id},#{name})
+    </insert>
+
+
+    <update id="updateRole" parameterType="java.util.Map">
+        update t_role set name=#{name} where id=#{id}
+    </update>
+
+    <select id="findRoleById" parameterType="java.lang.String" resultType="com.liu.infrastructure.pojo.RoleDO">
+        select id ,name from t_role where id=#{id}
+    </select>
+
+    <select id="findRolesByIds" parameterType="java.util.List" resultType="com.liu.domain.client.RoleModal">
+        select id ,name from t_role where id IN
+        <foreach collection="ids" open="(" close=")" separator="," item="id">
+            #{id}
+        </foreach>
+    </select>
+</mapper>
